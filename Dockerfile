@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends git
 COPY --from=builder	/opt/venv /opt/venv
 ENV IS_DOCKER=1 PATH="/opt/venv/bin:$PATH"
 
-RUN git clone https://github.com/LordWarWar/mhddos_proxy.git
+RUN git clone https://github.com/warwar-kill/mhddos_proxy.git
 WORKDIR mhddos_proxy
 
 ENTRYPOINT ["python3", "./runner.py"]
