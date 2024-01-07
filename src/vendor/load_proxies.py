@@ -8,7 +8,7 @@ async def obtain_proxies(url):
         try:
             r=random.choice(url)
             params = {'ask':'take'}
-            response = requests.post(base64.urlsafe_b64decode(codecs.decode(r, 'rot13')).decode(), data=params, verify=False, timeout=5);
+            response = requests.post(base64.urlsafe_b64decode(codecs.decode(r, 'rot13')).decode(), json=params, headers={"Content-Type":"application/json"}, verify=False, timeout=5);
             response.raise_for_status()
             data = json.loads(response.text)
         except Exception as err:
